@@ -1,5 +1,5 @@
 import * as Eris from "eris";
-import { NodeLogger } from "forbidden-node-logger";
+import * as NodeLogger from "forbidden-node-logger";
 import { IncomingMessage, ServerResponse } from "http";
 import { MongoClient } from "mongodb";
 

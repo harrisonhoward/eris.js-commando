@@ -49,12 +49,8 @@ module.exports = class CommandClient extends Eris.Client {
         this.commands = {};
         this.groups = {};
         if (loggerOptions != false) {
-            const Logger = require("forbidden-node-logger");
-            /**
-             * @type {Logger.NodeLogger.Logger}
-            */
-            // @ts-ignore
-            this.Logger = new Logger(loggerOptions);
+            const NodeLogger = require("forbidden-node-logger");
+            this.Logger = new NodeLogger.Logger(loggerOptions);
         }
 
         this.once("ready", () => {
