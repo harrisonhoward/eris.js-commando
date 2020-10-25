@@ -193,10 +193,10 @@ declare namespace Commando {
 
     export class UtilManager {
         bot: CommandClient;
-        useful: Useful;
-        parse: Parse;
-        database: Database;
-        conversion: Conversion;
+        useful: typeof Useful;
+        parse: typeof Parse;
+        database: typeof Database;
+        conversion: typeof Conversion;
         constructor(bot: CommandClient);
         bind(obj: object): void;
         bindAll(): void;
