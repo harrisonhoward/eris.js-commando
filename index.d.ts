@@ -247,4 +247,4 @@ declare namespace Commando {
     }
 }
 
-export default Commando;
+export = Commando;
