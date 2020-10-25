@@ -129,7 +129,7 @@ declare namespace Commando {
         queues: CommandQueues;
         requires: CommandRequires;
         invalidRequireMSG: string | boolean;
-        constructor(client: CommandClient, name: string, group: string, options: CommandOptions, execute: Promise<Function> | Function);
+        constructor(client: CommandClient, name: string, group: string, options: CommandOptions, execute?: Promise<Function> | Function);
         execute(message: Eris.Message, args: string[]): void;
         requiresCheck(msg: Eris.Message): Promise<boolean>;
         process(args: string[], msg: Eris.Message): Promise<void>;
