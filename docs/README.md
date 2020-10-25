@@ -4,7 +4,7 @@ Documentation for all classes in eris.js-commando
 
 ## Classes
 
-**CommandClient** -> [CommandClient](https://github.com/Forbidden-Duck/eris.js-commando/tree/master/docs/Classes/CommandoClient.md)\
+**CommandClient** -> [CommandClient](https://github.com/Forbidden-Duck/eris.js-commando/tree/master/docs/Classes/CommandClient.md)\
 **Command** -> [Command](https://github.com/Forbidden-Duck/eris.js-commando/tree/master/docs/Classes/Command.md)\
 **Group** -> [Group](https://github.com/Forbidden-Duck/eris.js-commando/tree/master/docs/Classes/Group.md)\
 **ParentGroup** -> [ParentGroup](https://github.com/Forbidden-Duck/eris.js-commando/tree/master/docs/Classes/ParentGroup.md)
