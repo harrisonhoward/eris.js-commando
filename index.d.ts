@@ -23,7 +23,7 @@ declare namespace Commando {
 
     interface CommandOptions {
         description?: string,
-        options?: string,
+        usage?: string,
         aliases?: string[],
         guildOnly?: boolean,
         ignoreBots?: boolean,
