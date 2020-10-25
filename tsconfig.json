@@ -1,0 +1,29 @@
+{
+    "compilerOptions": {
+        "baseUrl": "",
+        "target": "ES6",
+        "module": "CommonJS",
+        "strict": true,
+        "noImplicitAny": true,
+        "strictNullChecks": true,
+        "noImplicitThis": true,
+        "alwaysStrict": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "noImplicitReturns": true,
+        "noFallthroughCasesInSwitch": true,
+        "moduleResolution": "Node",
+        "lib": [
+            "ES6"
+        ],
+        "paths": {
+            "*": [
+                "*",
+                "./@types/*"
+            ]
+        }
+    },
+    "files": [
+        "index.d.ts"
+    ]
+}

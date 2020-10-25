@@ -1,0 +1,46 @@
+{
+  "name": "eris.js-commando",
+  "version": "1.0.0",
+  "description": "Command Handler built for Eris (not a replica of discord.js-commando)",
+  "main": "src/index.js",
+  "typings": "./index.d.ts",
+  "scripts": {
+    "base": "node test/BaseTest/bot.js",
+    "full": "node test/FullTest/bot.js"
+  },
+  "author": "Duck#9999",
+  "license": "MIT",
+  "optionalDependencies": {
+    "forbidden-node-logger": "^1.3.3"
+  },
+  "peerDependencies": {
+    "eris": "^0.13.0",
+    "mongodb": "^3.6.0",
+    "sqlite": "^3.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Forbidden-Duck/eris.js-commando.git"
+  },
+  "homepage": "https://github.com/Forbidden-Duck/eris.js-commando",
+  "bugs": {
+    "url": "https://github.com/Forbidden-Duck/eris.js-commando/issues"
+  },
+  "keywords": [
+    "eris",
+    ".js",
+    "js",
+    "javascript",
+    "ts",
+    "typescript",
+    "commando",
+    "command",
+    "cmd",
+    "handler",
+    "colour",
+    "color",
+    "node",
+    "console",
+    "logger"
+  ]
+}

@@ -1,0 +1,8 @@
+node_modules
+package-lock.json
+test/token.js
+src/logs/*
+test/BaseTest/logs/*
+test/BaseTest/logs
+test/FullTest/logs/*
+test/FullTest/logs
