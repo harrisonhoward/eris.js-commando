@@ -113,22 +113,17 @@ module.exports = class Command {
      * @param {Eris.Message} msg 
     */
     async process(args, msg) {
-        if (this.queues.preCommand) {
-            const response = await Promise.resolve(this.queues.preCommand(this, msg, args));
-            if (response) {
-                msg = response.msg || msg;
-                args = response.args || args;
-            }
-            if (response == false) {
-                return;
-            }
-        }
-
         if (!await this.requiresCheck(msg)) {
             if (this.invalidRequireMSG) {
                 msg.channel.createMessage(this.invalidRequireMSG);
             }
             return;
+        }
+        if (this.queues.preCommand) {
+            const response = await Promise.resolve(this.queues.preCommand(this, msg, args));
+            if (response == false) {
+                return;
+            }
         }
         try {
             await this.execute(msg, args);
