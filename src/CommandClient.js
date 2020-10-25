@@ -341,10 +341,14 @@ module.exports = class CommandClient extends Eris.Client {
         let groups = fs.readdirSync(dir)
             .filter(group => fs.lstatSync(`${dir}/${group}`).isDirectory());
         groups.forEach(parent => {
+            const parentsUsed = [];
             const array = fs.readdirSync(`${dir}/${parent}`)
                 .filter(group => fs.lstatSync(`${dir}/${parent}/${group}`).isDirectory())
-                .map(group => `${parent}/${group}`);
-            groups = groups.filter(group => group !== parent).concat(array);
+                .map(group => {
+                    parentsUsed.push(parent);
+                    return `${parent}/${group}`;
+                });
+            groups = groups.filter(group => !parentsUsed.includes(group)).concat(array);
         });
 
         let commandsInGroups = [];

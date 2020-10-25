@@ -1,6 +1,6 @@
 {
   "name": "eris.js-commando",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "Command Handler built for Eris (not a replica of discord.js-commando)",
   "main": "src/index.js",
   "typings": "./index.d.ts",
