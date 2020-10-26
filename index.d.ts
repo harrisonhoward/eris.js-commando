@@ -18,7 +18,7 @@ declare namespace Commando {
         (event: "guildPrefixUpdate", listener: (guild: Eris.Guild, oldPrefix: string, newPrefix: string) => void): T;
         (event: "guildPrefixRemove", listener: (guild: Eris.Guild, oldPrefix: string) => void): T;
         (event: "commandExecute", listener: (command: Command) => void): T;
-        (event: "commandError", listener: (error: Error, command: Command) => void): T;
+        (event: "commandError", listener: (command: Command, message: Eris.Message, err: Error) => void): T;
     }
 
     interface CommandOptions {
