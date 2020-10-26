@@ -100,7 +100,7 @@ declare namespace Commando {
         resolveCommand(name: string): Command | void;
         registerGuildPrefix(guildID: string, prefix: string): void;
         checkPrefix(msg: Eris.Message): string | void;
-        registerCommand(name: string | Command, group?: string, options?: CommandOptions): Command | void;
+        registerCommand(name: string | Command, group?: string, options?: CommandOptions, execute?: Promise<Function> | Function): Command | void;
         registerCommandsIn(dir: string): void;
         registerGroup(name: string | Group, id?: string, parentGroup?: string): Group | void;
         registerGroups(groups: (Group | ParentGroup)[]): void;
