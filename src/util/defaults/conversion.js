@@ -23,12 +23,12 @@ module.exports = class Conversion {
             });
 
             readStream.once("end", async () => {
-                const extension = url.match(/\.[0-9a-z]{1,10}$/i);
+                const extension = url.match(/\.[0-9a-z]{1,10}/i);
                 const imageBuffer = Buffer.concat(data);
                 if (!extension || !imageBuffer) {
                     reject(new Error("imageToBuffer failed"));
                 } else {
-                    resolve({ extension: extension[0], imageBuffer: imageBuffer });
+                    resolve({ extension: extension[extension.length - 1], imageBuffer: imageBuffer });
                 }
             });
         });
@@ -47,9 +47,9 @@ module.exports = class Conversion {
                     buffers.push(chunk);
                 });
                 req.on("end", () => {
-                    let extension = url.match(/\.[0-9a-z]{1,10}$/i);
+                    let extension = url.match(/\.[0-9a-z]{1,10}/i);
                     const data = Buffer.concat(buffers).toString("base64");
-                    const dataUri = `data:image/${extension[0].substring(1)};base64,${data}`;
+                    const dataUri = `data:image/${extension[extension.length - 1].substring(1)};base64,${data}`;
                     if (!extension || !data) {
                         reject(new Error("imageToBase64DataUri failed"));
                     } else {
