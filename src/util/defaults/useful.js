@@ -30,7 +30,7 @@ module.exports = class Useful {
         if (guild instanceof Eris.Guild) {
             if ((this.bot.guildPrefixes && this.bot.guildPrefixes[guild.id])
                 && this.bot.guildPrefixes[guild.id].length > 0) {
-                return this.bot.guildPrefixes[guild.id][0];
+                return this.bot.guildPrefixes[guild.id];
             }
         }
 
