@@ -127,7 +127,7 @@ module.exports = class Command {
         }
         try {
             await this.execute(msg, args);
-            this.client.emit("commandExecute", this);
+            this.client.emit("commandExecute", this, msg, args);
         } catch (err) {
             this.client.emit("commandError", this, msg, err);
         }
