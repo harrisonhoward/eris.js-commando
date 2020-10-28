@@ -20,7 +20,7 @@
 > bot.registerCommandsIn(__dirname + "/commands");
 > ```
 
-## 3. **How can I keep the comments I leave my util functions?**
+## 3. **How can I keep the comments I leave on my util functions?**
 > A lot of research went into having a good implementation of the util manager.\
 > Since TypeScript is very strict on it's declarations you will need to modify the `index.d.ts` file in `eris.js-commando` module.\
 > There are other methods but this seems the most simply

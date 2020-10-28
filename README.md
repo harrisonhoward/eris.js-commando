@@ -63,7 +63,7 @@ bot.Logger.fileHistory.getLatestLog();
 ```
 
 ### Utility Manager
-In-build utility manager allows you to use useful functions. The default functions include getting a users tag (username + discriminator) and others allows you to add, get different settings from storage using a map over having to manage your database yourself.\
+In-built utility manager allows you to use useful functions. The default functions include getting a users tag (username + discriminator) and others allows you to add, get different settings from storage using a map over having to manage your database yourself.\
 Along with these features you can add your own utils onto the manager itself.\
 *to keep typings you would have to modify the typings file, I'm looking into better options*
 ```js
@@ -79,7 +79,7 @@ function loadUtils(bot) {
 ```
 
 ### Webhook Manager
-In-build webhook manager allows you to quickly have your bot listen on a port and wait on a sub-directory url (i.e. "/request").\
+In-built webhook manager allows you to quickly have your bot listen on a port and wait on a sub-directory url (i.e. "/request").\
 This is useful for bots waiting for votes from popular listing sites like Bots for Discord and Discord Bot List.
 ```js
 bot.webhookmngr.listenOn(5000);

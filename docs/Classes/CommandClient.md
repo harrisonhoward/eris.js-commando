@@ -160,10 +160,13 @@ commandExecute
 > Parameter | Description | Type
 > --------- | ----------- | ----
 > command | Command executed | [Command](https://github.com/Forbidden-Duck/eris.js-commando/tree/master/docs/Classes/Command.md)
+> message | Message the command originated from | [Message](https://abal.moe/Eris/docs/Message)
+> args | Arguments used with the command | [String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)[]
 
 commandError
 > Emitted when a command experiences an error
 > Parameter | Description | Type
 > --------- | ----------- | ----
 > command | Command the error originated from | [Command](https://github.com/Forbidden-Duck/eris.js-commando/tree/master/docs/Classes/Command.md)
+> message | Message the command originated from | [Message](https://abal.moe/Eris/docs/Message)
 > error | Error that caused the event | [Error](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error)
