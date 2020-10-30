@@ -242,8 +242,8 @@ declare namespace Commando {
     }
 
     class Conversion {
-        static imageToBuffer(url: string): Promise<ConversionBufferReturn | Error>;
-        static imageToBase64DataUri(url: string): Promise<string | Error>;
+        static imageToBuffer(url: string): Promise<ConversionBufferReturn>;
+        static imageToBase64DataUri(url: string): Promise<string>;
     }
 }
 
