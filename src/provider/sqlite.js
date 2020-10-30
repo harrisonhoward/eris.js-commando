@@ -130,7 +130,6 @@ module.exports = class SQLiteProvider {
         if (guild === "global" || guild == null) {
             return "global";
         }
-        // @ts-ignore
         if (typeof guild === "string" && !isNaN(guild)) {
             return guild;
         }

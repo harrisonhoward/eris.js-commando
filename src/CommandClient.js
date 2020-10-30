@@ -106,7 +106,6 @@ module.exports = class CommandClient extends Eris.Client {
      * @param {Eris.Message} msg Eris.Message object to search
     */
     async onMessageCreate(msg) {
-        // @ts-ignore
         if (!this.ready) {
             return;
         }
@@ -127,21 +126,17 @@ module.exports = class CommandClient extends Eris.Client {
             const command = this.resolveCommand(name);
             if (command != undefined) {
                 msg.command = command;
-                // @ts-ignore
                 if (msg.command.ignoreBots && msg.author.bot) {
                     return;
                 }
                 try {
-                    // @ts-ignore
                     let resp = await msg.command.process(args, msg);
                     if (resp != null) {
                         if (!(resp instanceof Eris.Message)) {
                             resp = await this.createMessage(msg.channel.id, resp);
                         }
                     }
-                    // @ts-ignore
                     if (msg.command.queues.postCommand) {
-                        // @ts-ignore
                         msg.command.queues.postCommand(msg, args, resp);
                     }
                 } catch (err) {
@@ -151,9 +146,7 @@ module.exports = class CommandClient extends Eris.Client {
                     } else {
                         this.emit("error", err);
                     }
-                    // @ts-ignore
                     if (msg.command.queues.postCommand) {
-                        // @ts-ignore
                         msg.command.queues.postCommand(msg, args);
                     }
                 }
@@ -365,9 +358,7 @@ module.exports = class CommandClient extends Eris.Client {
 
         for (let command of commands) {
             try {
-                // @ts-ignore
                 command = new command(this);
-                // @ts-ignore
                 this.registerCommand(command);
             } catch (err) {
                 throw err;

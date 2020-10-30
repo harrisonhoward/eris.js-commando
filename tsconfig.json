@@ -4,6 +4,8 @@
         "target": "ES6",
         "module": "CommonJS",
         "strict": true,
+        "allowJs": true,
+        "checkJs": true,
         "noImplicitAny": true,
         "strictNullChecks": true,
         "noImplicitThis": true,
