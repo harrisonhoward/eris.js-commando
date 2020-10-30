@@ -32,6 +32,9 @@ module.exports = class Parse {
                     }
                 }
                 if (types.name == true) {
+                    if (this.bot.users.find(usr => usr.username.toLowerCase() === content.arg.toLowerCase())) {
+                        return this.bot.users.find(usr => usr.username.toLowerCase() === content.arg.toLowerCase());
+                    }
                     if (this.bot.users.find(usr => usr.username.toLowerCase().startsWith(content.arg.toLowerCase()))) {
                         return this.bot.users.find(usr => usr.username.toLowerCase().startsWith(content.arg.toLowerCase()));
                     }
@@ -65,6 +68,9 @@ module.exports = class Parse {
              * @type {Array<Command>}
             */
             const commands = Object.values(this.bot.commands);
+            if (commands.find(cmd => cmd.name === content.arg.toLowerCase())) {
+                return commands.find(cmd => cmd.name === content.arg.toLowerCase());
+            }
             if (commands.find(cmd => cmd.name.startsWith(content.arg.toLowerCase()))) {
                 return commands.find(cmd => cmd.name.startsWith(content.arg.toLowerCase()));
             }
@@ -90,6 +96,9 @@ module.exports = class Parse {
                     }
                 }
                 if (types.name == true) {
+                    if (this.bot.guilds.find(gld => gld.name.toLowerCase() === content.arg.toLowerCase())) {
+                        return this.bot.guilds.find(gld => gld.name.toLowerCase() === content.arg.toLowerCase());
+                    }
                     if (this.bot.guilds.find(gld => gld.name.toLowerCase().startsWith(content.arg.toLowerCase()))) {
                         return this.bot.guilds.find(gld => gld.name.toLowerCase().startsWith(content.arg.toLowerCase()));
                     }
@@ -115,6 +124,9 @@ module.exports = class Parse {
                     }
                 }
                 if (types.name == true) {
+                    if (guild.channels.find(chn => chn.name.toLowerCase() === content.arg.toLowerCase())) {
+                        return guild.channels.find(chn => chn.name.toLowerCase() === content.arg.toLowerCase());
+                    }
                     if (guild.channels.find(chn => chn.name.toLowerCase().startsWith(content.arg.toLowerCase()))) {
                         return guild.channels.find(chn => chn.name.toLowerCase().startsWith(content.arg.toLowerCase()));
                     }
@@ -148,6 +160,9 @@ module.exports = class Parse {
                     }
                 }
                 if (types.name == true) {
+                    if (guild.roles.find(rle => rle.name.toLowerCase() === content.arg.toLowerCase())) {
+                        return guild.roles.find(rle => rle.name.toLowerCase() === content.arg.toLowerCase());
+                    }
                     if (guild.roles.find(rle => rle.name.toLowerCase().startsWith(content.arg.toLowerCase()))) {
                         return guild.roles.find(rle => rle.name.toLowerCase().startsWith(content.arg.toLowerCase()));
                     }
