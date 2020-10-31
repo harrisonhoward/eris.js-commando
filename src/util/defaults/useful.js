@@ -123,7 +123,7 @@ module.exports = class Useful {
     */
     static awaitMessage(channel, timeout, filter) {
         return new Promise((resolve, reject) => {
-            const collector = new MessageCollector(this, channel, timeout, filter);
+            const collector = new MessageCollector(this.bot, channel, timeout, filter);
             collector.once("end", (message, reason) => {
                 if (reason && reason !== "user") {
                     reject(new Error(reason));
