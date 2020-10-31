@@ -17,6 +17,8 @@ module.exports = class UtilManager {
          * Client that instantiated Util Manager
         */
         this.bot = bot;
+        this.bot.util = {};
+
         this.useful = useful;
         this.parse = parse;
         this.database = database;
@@ -33,6 +35,7 @@ module.exports = class UtilManager {
             .filter(name => typeof obj[name] === "function");
         for (const func of functions) {
             obj[func] = obj[func].bind(this);
+            this.bot.util[func] = obj[func];
         }
     }
 
