@@ -2,8 +2,8 @@
 
 const CommandClient = require("./CommandClient");
 
-function Commando(token, options = {}, clientOptions = {}) {
-    return new CommandClient(token, options, clientOptions);
+function Commando(token, options = {}, clientOptions = {}, loggerOptions = {}) {
+    return new CommandClient(token, options, clientOptions, loggerOptions);
 }
 
 Commando.CommandClient = CommandClient;

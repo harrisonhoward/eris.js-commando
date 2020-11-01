@@ -3,7 +3,7 @@ import * as NodeLogger from "forbidden-node-logger";
 import { IncomingMessage, ServerResponse } from "http";
 import { MongoClient } from "mongodb";
 
-declare function Commando(token: string, options?: Eris.ClientOptions, clientOptions?: Commando.ClientOptions): Commando.CommandClient;
+declare function Commando(token: string, options?: Eris.ClientOptions, clientOptions?: Commando.ClientOptions, loggerOptions?: NodeLogger.LoggerOptions | false): Commando.CommandClient;
 
 declare namespace Commando {
     interface ClientOptions {
@@ -91,7 +91,7 @@ declare namespace Commando {
         webhookmngr?: WebhookManager;
         private preReady?: true;
         private _guildPrefixes: { [key: string]: string };
-        constructor(token: string, options?: Eris.ClientOptions, clientOptions?: ClientOptions, loggerOptions?: NodeLogger.LoggerOptions);
+        constructor(token: string, options?: Eris.ClientOptions, clientOptions?: ClientOptions, loggerOptions?: NodeLogger.LoggerOptions | false);
         get guildPrefixes(): { [key: string]: string };
         addGuildPrefix(guild: Eris.Guild, prefix: string): void;
         removeGuildPrefix(guild: Eris.Guild): void;
