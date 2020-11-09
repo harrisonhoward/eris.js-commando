@@ -123,7 +123,15 @@ module.exports = class CommandClient extends Eris.Client {
             && (msg.prefix = this.checkPrefix(msg))) {
             const args = msg.content.replace(/<@!/g, "<@").substring(msg.prefix.length).trim().split(/\s+/g);
             const name = args.shift();
-            const command = this.resolveCommand(name);
+            let command = this.resolveCommand(name);
+            if (command == undefined) {
+                const commandInsensitive = this.resolveCommand(name.toLowerCase());
+                if (commandInsensitive != undefined
+                    && commandInsensitive.caseInsensitive == true) {
+                    command = commandInsensitive;
+                }
+            }
+
             if (command != undefined) {
                 msg.command = command;
                 if (msg.command.ignoreBots && msg.author.bot) {
@@ -231,7 +239,8 @@ module.exports = class CommandClient extends Eris.Client {
      * @param {String} [options.usage="No usage"] Usage of the command
      * @param {Array<String>} [options.aliases=[]] An array of command aliases
      * @param {Boolean} [options.guildOnly=false] Whether the command is guildOnly
-     * @param {Boolean} [options.ignoreBots=false] Whether the command should ignore bots
+     * @param {Boolean} [options.ignoreBots=true] Whether the command should ignore bots
+     * @param {Boolean} [options.caseInsensitive=false] Whether the command is case insensitive
      * @param {Object} [options.queues={}] Queues which host Pre Command and Post Command
      * @param {Function} [options.queues.preCommand] Executes before the command
      * @param {Function} [options.queues.postCommand] Executes after the command

@@ -18,6 +18,7 @@ module.exports = class Command {
      * @param {Array<String>} [options.aliases=[]] An array of command aliases
      * @param {Boolean} [options.guildOnly=false] Whether the command is guildOnly
      * @param {Boolean} [options.ignoreBots=true] Whether the command should ignore bots
+     * @param {Boolean} [options.caseInsensitive=false] Whether the command is case insensitive
      * @param {Object} [options.queues={}] Queues which host Pre Command and Post Command
      * @param {Function} [options.queues.preCommand] Executes before the command
      * @param {Function} [options.queues.postCommand] Executes after the command
@@ -39,7 +40,8 @@ module.exports = class Command {
         this.usage = options.usage || "No usage";
         this.aliases = options.aliases || [];
         this.guildOnly = !!options.guildOnly;
-        this.ignoreBots = !!options.ignoreBots;
+        this.ignoreBots = options.ignoreBots == undefined ? true : !!options.ignoreBots;
+        this.caseInsensitive = !!options.caseInsensitive;
         this.queues = options.queues || {};
         this.requires = options.requires || {};
         if (!this.requires.users) {
