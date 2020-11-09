@@ -114,6 +114,22 @@ module.exports = class Useful {
         return `${user.username}#${user.discriminator}`;
     }
 
+    /** 
+     * @param {Object} emote 
+    */
+    static displayEmote(emote) {
+        if (emote == undefined) {
+            return;
+        }
+        if (emote.name == undefined
+            || emote.id == undefined) {
+            return;
+        }
+        return (emote.animated == true
+            ? `<a:${emote.name}:${emote.id}>`
+            : `<:${emote.name}:${emote.id}>`);
+    }
+
     /**
      * Wait for a single message to be sent
      * @param {Eris.Channel} channel 
