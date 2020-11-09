@@ -27,6 +27,7 @@ declare namespace Commando {
         aliases?: string[],
         guildOnly?: boolean,
         ignoreBots?: boolean,
+        caseInsensitive?: boolean,
         queues?: CommandQueues,
         requires?: CommandRequires,
         invalidRequireMSG?: string | boolean,
@@ -89,6 +90,8 @@ declare namespace Commando {
         Logger?: NodeLogger.Logger;
         util?: UtilManager;
         webhookmngr?: WebhookManager;
+        provider?: any;
+        awaitMessages?: { [key: string]: Function };
         private preReady?: true;
         private _guildPrefixes: { [key: string]: string };
         constructor(token: string, options?: Eris.ClientOptions, clientOptions?: ClientOptions, loggerOptions?: NodeLogger.LoggerOptions | false);
@@ -217,6 +220,7 @@ declare namespace Commando {
         static arrayPagify(array: any[], pageNumber?: number, amountPerPage?: number): UsefulPagifyReturn;
         static getDefaultChannel(guild: Eris.Guild): Eris.Channel | undefined;
         static getUserTag(id: Eris.User | string): string;
+        static displayEmote(emote: object): string;
         static awaitMessage(channel: Eris.Channel, timeout: number, filter: Function): Promise<Eris.Message | string>;
     }
 
