@@ -92,7 +92,9 @@ module.exports = class WebhookManager {
                         data += chunk;
                     });
                     req.on("end", () => {
-                        waitFor.fn(this.bot, data);
+                        await waitFor.fn(this.bot, data);
+                        res.writeHead(200, { "Content-Type": "application/json" });
+                        res.end();
                     });
                 }
             }
