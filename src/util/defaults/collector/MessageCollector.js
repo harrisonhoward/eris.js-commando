@@ -21,6 +21,11 @@ module.exports = class MessageCollector extends EventEmitter {
             this.client.removeListener("channelDelete", this._handleChannelDeletion);
             this.client.removeListener("guildDelete", this._handleGuildDeletion);
         });
+
+        if (this.client.awaitMessages == undefined) {
+            this.client.awaitMessages = {};
+        }
+        this.client.awaitMessages[channel.id] = filter;
     }
 
     _handleCollect(message) {
