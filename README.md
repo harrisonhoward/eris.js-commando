@@ -1,5 +1,6 @@
 Read [Github](https://github.com/Forbidden-Duck/eris.js-commando) README, in case of unpublished changes
 # Eris.js-Commando
+*not a clone of discord.js-commando*\
 A custom [Eris](https://github.com/abalabahaha/eris) command handler designed for [Forbidden Statistics](https://github.com/Forbidden-Duck/ForbiddenStatistics)
 
 ```
