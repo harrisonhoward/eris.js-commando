@@ -52,9 +52,16 @@ module.exports = class MessageCollector extends EventEmitter {
         }
         this.end = true;
 
-        const filterIndex = this.client.awaitMessage[this.channel.id].indexOf(this.filter);
+        const filterIndex = this.client.awaitMessages[this.channel.id].indexOf(this.filter);
         if (filterIndex > -1) {
-            this.client.awaitMessage[this.channel.id].splice(filterIndex, 1);
+            /*
+            Set at a 3 second delay to allow for external use.
+            This can be used to prevent commands
+            and the command processor will receive it before it's removed
+            */
+            setTimeout(() => {
+                this.client.awaitMessages[this.channel.id].splice(filterIndex, 1);
+            }, 1000);
         }
 
         this.emit("end", this.message, reason);
