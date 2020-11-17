@@ -91,7 +91,7 @@ declare namespace Commando {
         util?: UtilManager;
         webhookmngr?: WebhookManager;
         provider?: any;
-        awaitMessages?: { [key: string]: Function };
+        awaitMessages?: { [key: string]: Function[] };
         private preReady?: true;
         private _guildPrefixes: { [key: string]: string };
         constructor(token: string, options?: Eris.ClientOptions, clientOptions?: ClientOptions, loggerOptions?: NodeLogger.LoggerOptions | false);

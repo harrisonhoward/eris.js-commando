@@ -25,7 +25,10 @@ module.exports = class MessageCollector extends EventEmitter {
         if (this.client.awaitMessages == undefined) {
             this.client.awaitMessages = {};
         }
-        this.client.awaitMessages[channel.id] = filter;
+        if (this.client.awaitMessages[channel.id] == undefined) {
+            this.client.awaitMessages[channel.id] = [];
+        }
+        this.client.awaitMessages[channel.id].push(filter);
     }
 
     _handleCollect(message) {
@@ -48,7 +51,12 @@ module.exports = class MessageCollector extends EventEmitter {
             this._idleTimeout = null;
         }
         this.end = true;
-        delete this.client.awaitMessage;
+
+        const filterIndex = this.client.awaitMessage[this.channel.id].indexOf(this.filter);
+        if (filterIndex > -1) {
+            this.client.awaitMessage[this.channel.id].splice(filterIndex, 1);
+        }
+
         this.emit("end", this.message, reason);
     }
 
